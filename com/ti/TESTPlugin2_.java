@@ -161,7 +161,24 @@ public class TESTPlugin2_ implements PlugInFilter, DialogListener {
 		ByteProcessor imZeros = new ByteProcessor(width,height);
 		
 		/* � compl�ter */	
-		
+		for (int i = 1; i < height-1; i++) {
+			for (int j = 1; j < width-1; j++) {
+				float min = imLaplacien.get(j,i);
+				float max = imLaplacien.get(j,i);
+				for (int x = -1; x < 2; x++) {
+					for (int y = -1; y < 2; y++) {
+						if (min>imLaplacien.get(x+j,y+i)) 
+							min = imLaplacien.getf(x+j,y+i);						
+						if (max<imLaplacien.get(x+j,y+i)) 
+							max = imLaplacien.getf(x+j,y+i);
+					}
+				}
+				if (min<-seuil && max>seuil) 
+					imZeros.set(j, i, 255);
+				else 
+					imZeros.set(j, i, 0);	
+			}
+		}			
 		return imZeros;
 	}
 
