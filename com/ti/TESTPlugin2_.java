@@ -31,7 +31,7 @@ public class TESTPlugin2_ implements PlugInFilter, DialogListener {
 		{1,4,1, 4,-20,4, 1,4,1}
 	};
 	private static float sigma=0.0f;
-	private static boolean seuillageZeroCross=false;
+	private static boolean seuillageZeroCross=true;
 	private static boolean seuilZeroCrossAuto=true;
 	private static float seuilZeroCross=10f;
 	
@@ -76,6 +76,8 @@ public class TESTPlugin2_ implements PlugInFilter, DialogListener {
 		// D�tection et affichage des passages par 0 du Laplacien par seuillage du Laplacien (exercice 2)
 		if (seuillageZeroCross) {
 			/* � compl�ter */
+			ImagePlus im = new ImagePlus("seuillage laplacien"+sigma,this.laplacien(fpLaplacian,seuilZeroCross));
+			im.show();
 		}
 	}
 	
