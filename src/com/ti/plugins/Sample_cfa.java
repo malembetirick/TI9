@@ -39,7 +39,7 @@ public class Sample_cfa implements PlugInFilter {
 		        for (int x=0; x<width; x+=2) {
 		            pixel_value = ip.getPixel(x,y);
 		            if(k==1){
-		            	green = (int)(pixel_value & 0x00ff00)>>8;
+		            	green = (int)pixel_value;
 		            }
 		            cfa_ip.putPixel(x,y,green);
 		        }
@@ -48,17 +48,19 @@ public class Sample_cfa implements PlugInFilter {
 		        for (int x=1; x<width; x+=2) {
 		            pixel_value = ip.getPixel(x,y);
 		            if(k==1){
-		            	green = (int)(pixel_value & 0x00ff00)>>8;
+		            	green = (int)(pixel_value);
 		            }
 		            cfa_ip.putPixel(x,y,green);
 		        }
 		    }
+		    
+		    cfa_ip.;
 		    // �chantillons R
 		    for (int y=0; y<height; y+=2) {
 		        for (int x=1; x<width; x+=2) {
 		            pixel_value = ip.getPixel(x,y);
 		            if(k==0)
-		            	red = (int)(pixel_value & 0xff0000)>>16;
+		            	red = (int)(pixel_value);
 		            cfa_ip.putPixel(x,y,red);
 		        }
 		    }
@@ -67,7 +69,7 @@ public class Sample_cfa implements PlugInFilter {
 		        for (int x=0; x<width; x+=2) {
 		            pixel_value = ip.getPixel(x,y);
 		            if(k==2)
-		            	blue = (int)(pixel_value & 0x0000ff);
+		            	blue = (int)(pixel_value);
 		            cfa_ip.putPixel(x,y,blue);
 		        }
 		    }
