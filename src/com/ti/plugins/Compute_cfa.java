@@ -1,6 +1,4 @@
-package com.ti.plugins.tp11;
-
-import com.ti.TESTPlugin2_;
+package com.ti.plugins;
 
 import ij.*;
 import ij.plugin.filter.*;
